@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
+import { GridComponent } from './grid/grid.component';
+import { TableComponent } from './grid/table/table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    GridComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule
   ],
+  entryComponents:[GridComponent],
   providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    const simpleGridGrid = createCustomElement(GridComponent, { injector });
+    customElements.define('simple-grid-grid', simpleGridGrid);
+  }
+
+  ngDoBootstrap() {}
+ }
