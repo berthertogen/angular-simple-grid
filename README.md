@@ -1,6 +1,6 @@
 # AngularSimpleGrid
 
-Simple table with
+Simple grid with
 * Header filtering
 * Foorter paging
 * Http datasource
