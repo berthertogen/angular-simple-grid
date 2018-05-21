@@ -8,7 +8,7 @@ import { Row } from "./table/row";
   template: `
     <simple-grid-table [columns]="columns" [rows]="rows | async"></simple-grid-table>
   `,
-  styles: [],
+  styles: []
 })
 export class GridComponent implements OnInit {
   columns: Array<Column>;
@@ -19,11 +19,11 @@ export class GridComponent implements OnInit {
   ngOnInit() {
     this.columns = [{ title: "Col1" }, { title: "Col2" }];
     this.rows = of([
-      { cells: [{data:"Test1"}, {data:"Test2"}] },
-      { cells: [{data:"Test1"}, {data:"Test2"}] },
-      { cells: [{data:"Test1"}, {data:"Test2"}] },
-      { cells: [{data:"Test1"}, {data:"Test2"}] },
-      { cells: [{data:"Test1"}, {data:"Test2"}] },
+      { cells: [{ data: "Test1" }, { data: "Test2" }] },
+      { cells: [{ data: "Test1" }, { data: "Test2" }] },
+      { cells: [{ data: "Test1" }, { data: "Test2" }] },
+      { cells: [{ data: "Test1" }, { data: "Test2" }] },
+      { cells: [{ data: "Test1" }, { data: "Test2" }] }
     ]);
   }
 }
